@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="signup(form.value)" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" name="email" ngModel required email #email="ngModel"
+                   [class.invalid]="email.errors && email.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="email.errors?.required && email.dirty">
+        Email is required
+      </ion-item>
+      <ion-item class="error-message" *ngIf="email.errors?.email && email.dirty">
+        Email is not valid
+      </ion-item>
+      <ion-item class="error-message" *ngIf="email.errors?.emailTaken">
+        Username already taken
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="plain_password" ngModel required #plain_password="ngModel"
+                   [class.invalid]="plain_password.errors && plain_password.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="plain_password.errors?.required && plain_password.dirty">
+        Password is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" name="first_name" ngModel required #first_name="ngModel"
+                   [class.invalid]="first_name.errors && first_name.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="first_name.errors?.required && first_name.dirty">
+        First Name is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" name="last_name" ngModel required #last_name="ngModel"
+                   [class.invalid]="last_name.errors && last_name.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="last_name.errors?.required && last_name.dirty">
+        Last Name is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input type="text" name="address" ngModel required #address="ngModel"
+                   [class.invalid]="address.errors && address.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="address.errors?.required && address.dirty">
+        Address is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" name="city" ngModel required #city="ngModel"
+                   [class.invalid]="city.errors && city.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="city.errors?.required && city.dirty">
+        City is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Zip</ion-label>
+        <ion-input type="number" name="zip" ngModel required #zip="ngModel"
+                   [class.invalid]="zip.errors && zip.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="zip.errors?.required && zip.dirty" datatype="numeric">
+        Zip is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone number</ion-label>
+        <ion-input type="text" name="phone_number" ngModel required #phone_number="ngModel"
+                   [class.invalid]="phone_number.errors && phone_number.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="phone_number.errors?.required && phone_number.dirty">
+        Phone number is required
+      </ion-item>
+
+      <ion-checkbox hidden name="is_restaurant" [(ngModel)]="is_restaurant"></ion-checkbox>
+
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Sign up</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

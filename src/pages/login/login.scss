@@ -1,0 +1,54 @@
+page-login {
+  .list {
+    margin: 0;
+  }
+
+  .list > .item-block {
+    &:first-child {
+      border-top: 0;
+    }
+
+    .item-inner {
+      border-bottom: 0;
+    }
+
+  }
+
+  .item {
+    background-color: transparent !important;
+  }
+
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+    box-shadow: none;
+  }
+
+  .item-wp.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .text-input {
+    border-color: color($colors, primary);
+  }
+
+  ion-content {
+    background: url('../assets/imgs/splash.jpg') center;
+    background-size: cover;
+
+    .content {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .text-input {
+      margin-bottom: 0;
+      border: 2px solid color($colors, primary);
+      border-radius: 100px;
+      padding: 12px 20px;
+      text-align: center;
+
+      &-wp {
+        padding: 7px 20px;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "jwt",
-  "app_id": "",
+  "app_id": "ba2d9563",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

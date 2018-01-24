@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="content" ion-fixed>
+    <img src="assets/imgs/logo.png" padding>
+    <form #form="ngForm" (ngSubmit)="login(form.value)" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-input type="email" name="username" placeholder="Email" ngModel required #username="ngModel"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" name="password" placeholder="Mot de passe" ngModel required #password="ngModel"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button round color="primary" block type="submit" [disabled]="!form.valid">Se connecter</button>
+        </div>
+
+        <div padding-bottom padding-horizontal>
+          <button ion-button round color="primary" block type="button" (click)="signupSelect()">Inscription</button>
+        </div>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
